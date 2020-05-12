@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+<<<<<<< Updated upstream
 
 public class Flickr {
     public String title;
@@ -11,6 +12,29 @@ public class Flickr {
 
 
     // Getter Methods
+=======
+import java.util.List;
+
+public class Flickr {
+    private String title;
+    private String link;
+    private String description;
+    private String modified;
+    private String generator;
+    private List<Items> items;
+
+    public Flickr() {
+    }
+
+    public Flickr(String title, String link, String description, String modified, String generator, List<Items> items) {
+        this.title = title;
+        this.link = link;
+        this.description = description;
+        this.modified = modified;
+        this.generator = generator;
+        this.items = items;
+    }
+>>>>>>> Stashed changes
 
     public String getTitle() {
         return title;
@@ -32,7 +56,13 @@ public class Flickr {
         return generator;
     }
 
+<<<<<<< Updated upstream
     // Setter Methods
+=======
+    public List<Items> getItems() {
+        return items;
+    }
+>>>>>>> Stashed changes
 
     public void setTitle(String title) {
         this.title = title;
@@ -53,4 +83,23 @@ public class Flickr {
     public void setGenerator(String generator) {
         this.generator = generator;
     }
+<<<<<<< Updated upstream
+=======
+
+    public void setItems(List<Items> items) {
+        this.items = items;
+    }
+
+    @Override
+    public String toString() {
+        return "Flickr{" +
+                "title='" + title + '\'' +
+                ", link='" + link + '\'' +
+                ", description='" + description + '\'' +
+                ", modified='" + modified + '\'' +
+                ", generator='" + generator + '\'' +
+                ", items=" + items +
+                '}';
+    }
+>>>>>>> Stashed changes
 }

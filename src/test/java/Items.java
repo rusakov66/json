@@ -99,16 +99,6 @@ public class Items {
 
     @Override
     public String toString() {
-        return "Items{" +
-                "title='" + title + '\'' +
-                ", link='" + link + '\'' +
-                ", media=" + media +
-                ", date_taken='" + date_taken + '\'' +
-                ", description='" + description + '\'' +
-                ", published='" + published + '\'' +
-                ", author='" + author + '\'' +
-                ", author_id='" + author_id + '\'' +
-                ", tags='" + tags + '\'' +
-                '}';
+        return  ""+ media;
     }
 }

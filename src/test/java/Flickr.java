@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Flickr {
     public String title;
@@ -6,12 +7,12 @@ public class Flickr {
     public String description;
     public String modified;
     public String generator;
-    ArrayList< Object > items = new ArrayList < Object > ();
+    List< Items > items = new ArrayList < Items > ();
     public Flickr() {
 
     }
 
-    public Flickr(String title, String link, String description, String modified, String generator, ArrayList<Object> items) {
+    public Flickr(String title, String link, String description, String modified, String generator, List<Items> items) {
         this.title = title;
         this.link = link;
         this.description = description;
@@ -72,11 +73,11 @@ public class Flickr {
         this.generator = generator;
     }
 
-    public ArrayList<Object> getItems() {
+    public List<Items> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<Object> items) {
+    public void setItems(List<Items> items) {
         this.items = items;
     }
 }

@@ -34,7 +34,7 @@ public class Items {
     }
 
     public String getLink() {
-        return link;
+        return "" + link;
     }
 
     public void setLink(String link) {

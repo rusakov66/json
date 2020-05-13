@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Flickr {
+public  class Flickr {
     public String title;
     public String link;
     public String description;

@@ -7,8 +7,7 @@
     <groupId>json</groupId>
     <artifactId>json</artifactId>
     <version>1.0-SNAPSHOT</version>
-<<<<<<< Updated upstream
-=======
+
     <build>
         <plugins>
             <plugin>
@@ -21,17 +20,12 @@
             </plugin>
         </plugins>
     </build>
->>>>>>> Stashed changes
 
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-<<<<<<< Updated upstream
-            <version>2.11.0</version>
-=======
             <version>2.9.5</version>
->>>>>>> Stashed changes
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -51,8 +45,5 @@
             <version>20180130</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
-
-
 </project>

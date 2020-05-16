@@ -2,15 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public  class Flickr {
-    public String title;
-    public String link;
-    public String description;
-    public String modified;
-    public String generator;
-    List< Items > items = new ArrayList < Items > ();
-    public Flickr() {
-
-    }
+    private String title;
+    private String link;
+    private String description;
+    private String modified;
+    private String generator;
+    public List<Items> items;
+    private Flickr() { }
 
     public Flickr(String title, String link, String description, String modified, String generator, List<Items> items) {
         this.title = title;

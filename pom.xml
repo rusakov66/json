@@ -25,25 +25,25 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.5</version>
+            <version>${jackson-databind.version}</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>4.0.0</version>
+            <version>${rest-assured.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20180130</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20180130</version>
+            <version>${json.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <properties>
+        <json.version>20180130</json.version>
+        <jackson-databind.version>2.9.5</jackson-databind.version>
+        <rest-assured.version>4.0.0</rest-assured.version>
+    </properties>
 </project>

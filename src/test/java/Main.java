@@ -37,10 +37,13 @@ public class Main {
         System.out.println(stringURL);
         ObjectMapper objectMapper = new ObjectMapper();
         Flickr flickr = objectMapper.readValue(new URL(stringURL), Flickr.class);
-        String dir = "C:\\Users\\irusakov\\IdeaProjects\\json\\src\\resources\\" + LocalDate.now().toString() + "\\";
+        //String dir =  LocalDate.now().toString() + "\\";
+        String dir =  "src\\resources\\" + LocalDate.now().toString() + "\\";
+        System.out.println(dir);
+        //String dir = "C:\\Users\\irusakov\\IdeaProjects\\json\\src\\resources\\" + LocalDate.now().toString() + "\\";
 
         File dirF = new File(dir);
-        if (dirF.isDirectory()) System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5");
+        if (dirF.isDirectory()) System.out.println("Directory " + dirF +  " exists");
             else dirF.mkdir();
         for (int i = 0; i < num; i++) {
             String path = flickr.items.get(i).toString();

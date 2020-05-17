@@ -40,7 +40,7 @@ public class Main {
         String dir = "C:\\Users\\irusakov\\IdeaProjects\\json\\src\\resources\\" + LocalDate.now().toString() + "\\";
 
         File dirF = new File(dir);
-        if (dirF.isDirectory()) System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5");
+        if (dirF.isDirectory()) System.out.println("Directory " + dirF +  " exists");
             else dirF.mkdir();
         for (int i = 0; i < num; i++) {
             String path = flickr.items.get(i).toString();

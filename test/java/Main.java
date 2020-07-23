@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONException;
+
 import java.time.*;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -8,23 +9,27 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class    Main {
+public class Main {
 
     public static void main(String[] args) throws JSONException, IOException {
+
+        File resourcesDir = new File(Config.getProperty(Config.RESOURCES_DIR));
+        if (resourcesDir.isDirectory()) System.out.println("Directory " + resourcesDir + " exists");
+        else resourcesDir.mkdir();
+
         int num = 21;
         Scanner scanner = new Scanner(System.in);
-        while ((num > 20) || (num<1)) {
+        while ((num > 20) || (num < 1)) {
             System.out.println("How many items do you need? (up to 20 from 1)");
             num = scanner.nextInt();
         }
-            System.out.println("Please, enter tags: (<Enter> with empty string - end of input)");
-            String tag = "";
-            String tag1 = "!";
+        System.out.println("Please, enter tags: (<Enter> with empty string - end of input)");
+        String tag = "";
+        String tag1 = "!";
 
         while (!tag1.equals("")) {
             Scanner scanner2 = new Scanner(System.in);
             tag1 = scanner2.nextLine();
-            //if (tag1 != "")
             tag = tag + "," + tag1;
         }
         System.out.println();
@@ -32,24 +37,21 @@ public class    Main {
         if (!tag.equals("")) tag = (tag.substring(1, tag.length())); // remove first comma
         if (!tag.equals("")) tag = "&tags=" + tag;
 
-        String stringURL = "https://www.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1" + tag;
+        String stringURL = Config.getProperty(Config.RESOURCES_URL);
         System.out.println(tag);
         System.out.println(stringURL);
         ObjectMapper objectMapper = new ObjectMapper();
         Flickr flickr = objectMapper.readValue(new URL(stringURL), Flickr.class);
-        //String dir =  LocalDate.now().toString() + "\\";
-        String dir =  "src\\resources\\" + LocalDate.now().toString() + "\\";
+        String dir = Config.getProperty(Config.RESOURCES_DIR) + LocalDate.now().toString() + "\\";
         System.out.println(dir);
-        //String dir = "C:\\Users\\irusakov\\IdeaProjects\\json\\src\\resources\\" + LocalDate.now().toString() + "\\";
 
         File dirF = new File(dir);
-        if (dirF.isDirectory()) System.out.println("Directory " + dirF +  " exists");
-            else dirF.mkdir();
+        if (dirF.isDirectory()) System.out.println("Directory " + dirF + " exists");
+        else dirF.mkdir();
         for (int i = 0; i < num; i++) {
             String path = flickr.items.get(i).toString();
             System.out.println(path);
-            String name = path.substring(path.length()-28, path.length());
-            //name = dirF.toString() + name;
+            String name = path.substring(path.length() - 28, path.length());
             System.out.println(name);
             URL url2 = new URL(path);
             BufferedImage img = ImageIO.read(url2);
@@ -58,6 +60,5 @@ public class    Main {
             System.out.println(flickr.items.get(i).getAuthor());
 
         }
-
     }
 }

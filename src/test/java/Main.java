@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class Main {
+public class    Main {
 
     public static void main(String[] args) throws JSONException, IOException {
         int num = 21;

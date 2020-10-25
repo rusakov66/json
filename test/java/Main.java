@@ -41,7 +41,7 @@ public class Main {
         System.out.println(tag);
         System.out.println(stringURL);
         ObjectMapper objectMapper = new ObjectMapper();
-        Flickr flickr = objectMapper.readValue(new URL(stringURL), Flickr.class);
+        Flickr flickr = objectMapper.readValue(new URL(stringURL+tag), Flickr.class);
         String dir = Config.getProperty(Config.RESOURCES_DIR) + LocalDate.now().toString() + "\\";
         System.out.println(dir);
 

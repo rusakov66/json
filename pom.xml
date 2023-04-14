@@ -42,7 +42,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <json.version>20180130</json.version>
+        <json.version>20230227</json.version>
         <jackson-databind.version>2.9.5</jackson-databind.version>
         <rest-assured.version>4.0.0</rest-assured.version>
     </properties>
